@@ -11,7 +11,7 @@
 """
 
 import html
-
+import io
 from telethon.tl.functions.account import UpdateProfileRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, UploadProfilePhotoRequest
 from telethon.tl.functions.users import GetFullUserRequest
@@ -52,7 +52,8 @@ async def _(event):
     await event.client(UpdateProfileRequest(about=user_bio))
     if profile_pic:
         pfile = await event.client.upload_file(profile_pic)
-        await event.client(UploadProfilePhotoRequest(pfile))
+        await event.client(UploadProfilePhotoRequest(file=pfile))
+        os.remove(profile_pic)
     await eve.delete()
     await event.client.send_message(
         event.chat_id, f"**I am `{first_name}` from now...**", reply_to=reply_message

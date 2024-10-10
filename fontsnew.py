@@ -1,8 +1,4 @@
-#
-# Credits @chewmo
-#
-# Ported for Ultroid < https://github.com/TeamUltroid/Ultroid >
-#
+# oreo
 
 """
 ✘ Commands Available -
@@ -348,6 +344,7 @@ rusifont = [
     "з",
 ]
 
+from . import *
 
 @ultroid_cmd(pattern="weeb ?(.*)")
 async def weebify(ult):
