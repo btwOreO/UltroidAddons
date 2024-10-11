@@ -35,7 +35,7 @@ try:
 except ImportError:
     Image = None
     LOGS.info(f"{__file__}: PIL  not Installed.")
-from PyPDF2 import PdfFileMerger, PdfFileReader, PdfFileWriter
+from pypdf import PdfFileMerger, PdfFileReader, PdfFileWriter
 from telethon.errors.rpcerrorlist import PhotoSaveFileInvalidError
 
 from pyUltroid.fns.tools import four_point_transform
