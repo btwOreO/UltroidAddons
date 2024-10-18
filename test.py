@@ -1,10 +1,4 @@
-# Ported From DarkCobra Originally By UNIBORG
-#
-# Ultroid - UserBot
-#
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# oreo
 
 """
 ✘ Commands Available -
@@ -15,9 +9,7 @@
 """
 
 from datetime import datetime
-
 import speedtest
-
 from . import *
 
 
@@ -29,7 +21,7 @@ async def _(event):
         as_document = False
     elif input_str == "file":
         as_document = True
-    xx = await event.eor("`Calculating ur Ultroid Server Speed. Please wait!`")
+    xx = await event.eor("`Calculating ur Server Speed. Please wait!`")
     start = datetime.now()
     s = speedtest.Speedtest()
     s.get_best_server()
@@ -52,7 +44,7 @@ async def _(event):
         speedtest_image = response
         if as_document is None:
             await xx.edit(
-                """`Ultroid Server Speed in {} sec`
+                """`Server Speed in {} sec`
 
 `Download: {}`
 `Upload: {}`
